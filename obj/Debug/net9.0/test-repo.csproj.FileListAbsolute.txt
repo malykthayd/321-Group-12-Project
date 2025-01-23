@@ -1,0 +1,15 @@
+/Users/grantsegura/Documents/mis221/test-repo/bin/Debug/net9.0/test-repo
+/Users/grantsegura/Documents/mis221/test-repo/bin/Debug/net9.0/test-repo.deps.json
+/Users/grantsegura/Documents/mis221/test-repo/bin/Debug/net9.0/test-repo.runtimeconfig.json
+/Users/grantsegura/Documents/mis221/test-repo/bin/Debug/net9.0/test-repo.dll
+/Users/grantsegura/Documents/mis221/test-repo/bin/Debug/net9.0/test-repo.pdb
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.AssemblyInfoInputs.cache
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.AssemblyInfo.cs
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.csproj.CoreCompileInputs.cache
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.sourcelink.json
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.dll
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/refint/test-repo.dll
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.pdb
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/test-repo.genruntimeconfig.cache
+/Users/grantsegura/Documents/mis221/test-repo/obj/Debug/net9.0/ref/test-repo.dll
