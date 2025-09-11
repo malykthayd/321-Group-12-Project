@@ -1,0 +1,241 @@
+/* Custom styles to complement Bootstrap */
+body {
+    background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #B22222 100%);
+    min-height: 100vh;
+}
+
+/* Override Bootstrap primary colors to match red theme */
+.text-primary {
+    color: #8B0000 !important;
+}
+
+.btn-primary {
+    background-color: #8B0000;
+    border-color: #8B0000;
+}
+
+.btn-primary:hover {
+    background-color: #A52A2A;
+    border-color: #A52A2A;
+}
+
+.btn-primary:focus {
+    background-color: #8B0000;
+    border-color: #8B0000;
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+.btn-outline-primary {
+    color: #8B0000;
+    border-color: #8B0000;
+}
+
+.btn-outline-primary:hover {
+    background-color: #8B0000;
+    border-color: #8B0000;
+    color: white;
+}
+
+.btn-outline-primary.active {
+    background-color: #8B0000;
+    border-color: #8B0000;
+    color: white;
+}
+
+.border-primary {
+    border-color: #8B0000 !important;
+}
+
+/* Login Page Feature Styles */
+.login-page {
+    background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #B22222 100%);
+    min-height: 100vh;
+}
+
+.login-page .card {
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.login-page .form-control:focus,
+.login-page .form-select:focus {
+    border-color: #8B0000;
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+.login-page .btn-primary {
+    background: linear-gradient(45deg, #8B0000, #DC143C);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-page .btn-primary:hover {
+    background: linear-gradient(45deg, #A52A2A, #B22222);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+}
+
+.login-page .btn-outline-secondary {
+    border-color: #dee2e6;
+    color: #6c757d;
+}
+
+.login-page .btn-outline-secondary:hover {
+    background-color: #8B0000;
+    border-color: #8B0000;
+    color: white;
+}
+
+.login-page .text-primary {
+    color: #8B0000 !important;
+}
+
+.login-page .form-control.is-valid {
+    border-color: #198754;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='m2.3 6.73.94-.94 1.89-1.89-1.89-1.89-.94-.94L2.3 1.89l.94.94L5.13 4.72l-1.89 1.89-.94.94z'/%3e%3c/svg%3e");
+}
+
+.login-page .form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 1.4 1.4 1.4-1.4'/%3e%3c/svg%3e");
+}
+
+/* Navigation customizations */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section visibility */
+.section {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button enhancements */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Card enhancements */
+.card {
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Form enhancements */
+.form-control:focus,
+.form-select:focus {
+    border-color: #8B0000;
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+/* List item enhancements */
+.workout-item,
+.stat-item,
+.player-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #8B0000;
+    transition: transform 0.2s ease;
+}
+
+.workout-item:hover,
+.stat-item:hover,
+.player-item:hover {
+    transform: translateX(5px);
+}
+
+/* User selector styling */
+.user-selector .form-select {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Player Comparison Styles */
+.comparison-card {
+    border: 2px solid #dee2e6;
+    transition: border-color 0.3s ease;
+}
+
+.comparison-card:hover {
+    border-color: #8B0000;
+}
+
+.comparison-stat {
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #dee2e6;
+}
+
+.comparison-stat.better {
+    background-color: #d4edda;
+    border-left-color: #28a745;
+}
+
+.comparison-stat.worse {
+    background-color: #f8d7da;
+    border-left-color: #dc3545;
+}
+
+.comparison-stat.neutral {
+    background-color: #e9ecef;
+    border-left-color: #6c757d;
+}
+
+.comparison-badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.comparison-vs {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8B0000;
+}
