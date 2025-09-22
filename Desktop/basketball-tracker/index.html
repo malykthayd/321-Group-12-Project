@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tide Hoops Connect</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Resources/Styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
+                <img src="Resources/Images/Tide Hoops Connect Logo.png" alt="Tide Hoops Connect" style="height: 140px; width: auto; margin-right: 25px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <button class="nav-link btn btn-outline-primary me-2 active" data-section="dashboard">Dashboard</button>
+                    <button class="nav-link btn btn-outline-primary me-2" data-section="workouts-stats">Workouts & Stats</button>
+                    <button class="nav-link btn btn-outline-primary me-2" data-section="weight-lifting">Weight Lifting</button>
+                    <button class="nav-link btn btn-outline-primary me-2" data-section="coach">Coach View</button>
+                    <!-- Login Page Feature - User Display and Logout -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <span id="userDisplay">User</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" style="min-width: 300px;">
+                            <!-- Profile Section -->
+                            <li class="dropdown-header">
+                                <div class="d-flex align-items-center">
+                                    <img id="profilePhoto" src="" alt="Profile" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover; background-color: #f8f9fa;">
+                                    <div>
+                                        <div class="fw-bold" id="profileName">Loading...</div>
+                                        <small class="text-muted" id="profileEmail">Loading...</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            
+                            <!-- Profile Info -->
+                            <li class="px-3 py-2">
+                                <div class="row g-2">
+                                    <div class="col-4"><small class="text-muted">Name:</small></div>
+                                    <div class="col-8"><small id="profileFullName">-</small></div>
+                                    <div class="col-4"><small class="text-muted">Email:</small></div>
+                                    <div class="col-8"><small id="profileEmailDetail">-</small></div>
+                                    <div class="col-4"><small class="text-muted">Position:</small></div>
+                                    <div class="col-8"><small id="profilePosition">-</small></div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            
+                            <!-- Photo Upload -->
+                            <li class="px-3 py-2">
+                                <label for="photoUpload" class="btn btn-sm btn-outline-primary w-100 mb-2">
+                                    <i class="bi bi-camera"></i> Update Photo
+                                </label>
+                                <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                                <button class="btn btn-sm btn-outline-danger w-100" id="removePhotoBtn">
+                                    <i class="bi bi-trash"></i> Remove Photo
+                                </button>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            
+                            <!-- Logout -->
+                            <li><button class="dropdown-item" id="logoutBtn">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h3 text-white">Player Dashboard</h2>
+                <div class="user-selector">
+                    <select id="playerSelect" class="form-select">
+                        <option value="current">Current Player</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Player Cards Grid -->
+            <div class="row" id="playersGrid">
+                <!-- Players will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Workouts & Stats Section -->
+        <section id="workouts-stats" class="section">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h3 text-white">Workouts & Stats</h2>
+                <button class="btn btn-primary" id="addPlayerBtn">
+                    <i class="bi bi-person-plus"></i> Add Player
+                </button>
+            </div>
+            
+            <div class="row" id="workoutsStatsContent">
+                <!-- Workout stats will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Weight Lifting Section -->
+        <section id="weight-lifting" class="section">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h3 text-white">Weight Lifting</h2>
+                <button class="btn btn-primary" id="addLiftBtn">
+                    <i class="bi bi-plus-circle"></i> Log Lift
+                </button>
+            </div>
+            
+            <!-- Lift Tracking Content -->
+            <div class="row" id="liftsContent">
+                <!-- Lifts will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Coach View Section -->
+        <section id="coach" class="section">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h3 text-white">Coach View</h2>
+            </div>
+            
+            <div class="row" id="coachContent">
+                <!-- Coach view content will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Player Modal -->
+    <div class="modal fade" id="playerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Player</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="playerForm">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="position" class="form-label">Position</label>
+                            <select class="form-select" id="position" name="position" required>
+                                <option value="">Select Position</option>
+                                <option value="PG">Point Guard</option>
+                                <option value="SG">Shooting Guard</option>
+                                <option value="SF">Small Forward</option>
+                                <option value="PF">Power Forward</option>
+                                <option value="C">Center</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="photoUrl" class="form-label">Photo URL (Optional)</label>
+                            <input type="url" class="form-control" id="photoUrl" name="photoUrl">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="savePlayerBtn">Add Player</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Lift Modal -->
+    <div class="modal fade" id="liftModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Log New Lift</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="liftForm">
+                        <div class="mb-3">
+                            <label for="liftPlayer" class="form-label">Player</label>
+                            <select class="form-select" id="liftPlayer" name="playerId" required>
+                                <option value="">Select Player</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exerciseName" class="form-label">Exercise</label>
+                            <select class="form-select" id="exerciseName" name="exerciseName" required>
+                                <option value="">Select Exercise</option>
+                                <option value="Bench Press">Bench Press</option>
+                                <option value="Squat">Squat</option>
+                                <option value="Deadlift">Deadlift</option>
+                                <option value="Row">Row</option>
+                                <option value="Curl">Curl</option>
+                                <option value="Pull Ups">Pull Ups</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="weight" class="form-label">Weight (lbs)</label>
+                                    <input type="number" class="form-control" id="weight" name="weight" step="0.5" min="0" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="reps" class="form-label">Reps</label>
+                                    <input type="number" class="form-control" id="reps" name="reps" min="1" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="sets" class="form-label">Sets</label>
+                                    <input type="number" class="form-control" id="sets" name="sets" min="1" value="1" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="notes" class="form-label">Notes (Optional)</label>
+                            <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveLiftBtn">Log Lift</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    
+    <!-- Custom JS -->
+    <script src="Resources/Scripts/script.js"></script>
+</body>
+</html>
